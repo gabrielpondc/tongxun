@@ -40,9 +40,9 @@ try:
         print("\n")
         print("手机号码:"+s)
         result = s1[42]+s1[43]+s1[46]+s1[47]
-        print("所属省份:"+result.replace("ce", " "))
+        print("所属省份:"+result.replace("ce", "").replace("\n", ""))
         result2 = s1[60]+s1[61]+s1[62]+s1[63]+s1[64]+s1[65]+s1[66]+s1[67]
-        print("通讯服务提供商（ISP):"+result2.replace("',", " ").replace("me:'", " "))
+        print("通讯服务提供商（ISP):"+result2.replace("',", " ").replace("me:'", " ").replace("\n", ""))
     except IndexError:
         print("手机号码格式有误，请重新输入")
 except urllib.error.URLError:
