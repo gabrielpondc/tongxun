@@ -2,25 +2,6 @@ import json
 import urllib.request, urllib.parse, urllib.error
 import ssl
 import os
-import subprocess
-import socket
-import re
-
-print("TIP：请确认主机信息以防止隐私盗取")
-#获取本机ipv6
-child=subprocess.Popen("ipconfig", shell=True, stdout = subprocess.PIPE)
-out=child.communicate();#保存ipconfig中的所有信息
-ipv6_pattern='(([a-f0-9]{1,4}:){7}[a-f0-9]{1,4})'
-m=re.findall(ipv6_pattern,str(out))
-address=m[1][0]
-#获取本机电脑名
-myname = socket.getfqdn(socket.gethostname(  ))
-#获取本机ipv4
-myaddr =socket.gethostbyname(myname)
-
-print("查询主机名称："+myname)
-print( "查询主机本地IPv4地址："+myaddr)
-print( "查询主机本地IPv6地址："+address)
 print("------------------------------查询手机运营商------------------------------")
 s= input("请输入查询手机号码：")
 print("-------------------------------搜索中···-------------------------------")
@@ -37,6 +18,7 @@ try:
     c = json.dumps(newdata)
     s1 = json.loads(str(c))
     try:
+
         print("\n")
         print("手机号码:"+s)
         result = s1[42]+s1[43]+s1[46]+s1[47]
@@ -45,8 +27,10 @@ try:
         print("通讯服务提供商（ISP):"+result2.replace("',", " ").replace("me:'", " ").replace("\n", ""))
     except IndexError:
         print("手机号码格式有误，请重新输入")
+        os.system('pause')
 except urllib.error.URLError:
     print("\n")
     print("通讯异常请检查网络连接以及接口")
+    os.system('pause')
 print("------------------------------CopyRight©GuJiaKai--------------------------\n")
 os.system('pause')
