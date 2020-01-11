@@ -26,8 +26,8 @@ try:
     try:
         print("\n")
         print("手机号码:" + s)
-        result = s1[42] + s1[43] + s1[46] + s1[47]
-        print("所属省份:" + result.replace("ce", "").replace("\n", "").replace(",",""))
+        result = s1[42] + s1[43]+s1[44] + s1[46] + s1[47]+s1[48]
+        print("所属省份:" + result.replace("ce", "").replace("\n", "").replace("'","").replace(",",""))
         result3=s2[132]+s2[133]+s2[134]+s2[135]
         print("所属市辖:" + result3.replace("\",", "").replace("\"",""))
         result2 = s1[60] + s1[61] + s1[62] + s1[63] + s1[64] + s1[65] + s1[66] + s1[67]
